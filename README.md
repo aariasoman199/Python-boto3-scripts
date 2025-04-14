@@ -34,25 +34,25 @@ python3 describe_ec2_vpc.py ec2
 
 4. If vpc selected:
 
-   Call vpc_info()
-   Group subnets under corresponding VPCs
-   Format and print as a list of VPC dictionaries with subnet details.
+   - Call vpc_info()
+   - Group subnets under corresponding VPCs
+   - Format and print as a list of VPC dictionaries with subnet details.
 
 ## Function Descriptions
 
 ### instance_info()
-Connects to EC2
-Retrieves all instances
-Extracts and structures details including:
-Name, ID, AMI, type, state, IPs, VPC, subnet, AZ
-Returns list of EC2 instance dictionaries
+- Connects to EC2
+- Retrieves all instances
+- Extracts and structures details including:
+- Name, ID, AMI, type, state, IPs, VPC, subnet, AZ
+- Returns list of EC2 instance dictionaries
 
 ### vpc_info()
-Connects to EC2
-Retrieves all VPCs and subnets
-Maps subnets to corresponding VPCs
-Extracts: VPC name, ID, CIDR block,Subnet ID, CIDR block, and AZ
-Returns list of VPC dictionaries with embedded subnet list
+- Connects to EC2
+- Retrieves all VPCs and subnets
+- Maps subnets to corresponding VPCs
+- Extracts: VPC name, ID, CIDR block,Subnet ID, CIDR block, and AZ
+- Returns list of VPC dictionaries with embedded subnet list
 
 ## EC2 Example Output
 ```sh
