@@ -19,3 +19,93 @@ Example:
 ```sh
 python3 describe_ec2_vpc.py ec2
 ```
+## Algorithm Summary
+
+1. Input: A command-line argument indicating whether to fetch ec2 or vpc info.
+
+2. Initialize AWS Client: Using hardcoded credentials and Boto3.
+
+3. If ec2 selected:
+
+   Call instance_info()
+   Loop through instances to extract:
+   Name tag, instance ID, type, state, IPs, subnet, VPC, and AZ.
+   Format and print as a list of dictionaries.
+
+4. If vpc selected:
+
+   Call vpc_info()
+   Group subnets under corresponding VPCs
+   Format and print as a list of VPC dictionaries with subnet details.
+
+## Function Descriptions
+
+### instance_info()
+Connects to EC2
+Retrieves all instances
+Extracts and structures details including:
+Name, ID, AMI, type, state, IPs, VPC, subnet, AZ
+Returns list of EC2 instance dictionaries
+
+### vpc_info()
+Connects to EC2
+Retrieves all VPCs and subnets
+Maps subnets to corresponding VPCs
+Extracts: VPC name, ID, CIDR block,Subnet ID, CIDR block, and AZ
+Returns list of VPC dictionaries with embedded subnet list
+
+## EC2 Example Output
+```sh
+[
+{
+'Name': 'shopping-Webserver-dev',
+'Instanceid': 'i-06d263563c97aee50',
+'Imageid': 'ami-05c179eced2eb9b5b',
+'InstanceType': 't2.micro',
+'InstanceState': 'stopped',
+'PrivateIpAddress': '172.31.36.108',
+'PublicIpAddress': 'null',
+'VpcId': 'vpc-0a15b56e8bbd369cc',
+'SubnetId': 'subnet-0ab12861f98052723',
+'AvailabilityZone': 'ap-south-1a'}
+}
+]
+```
+
+## VPC Example Output
+```sh
+[
+{
+'Name': 'shopping',
+'VpcId': 'vpc-00516b89656def807',
+'CidrBlock': '172.16.0.0/16',
+'Subnet':
+         [
+          {
+            'SubnetId': 'subnet-02f7252a60332d556',
+            'CidrBlock': '172.16.128.0/18',
+             'AvailabilityZone': 'ap-south-1c'
+          },
+          {
+            'SubnetId': 'subnet-0673b1a1338fa225b',
+            'CidrBlock': '172.16.64.0/18',
+            'AvailabilityZone': 'ap-south-1b'
+          },
+          {
+            'SubnetId': 'subnet-0ac435a8fc87e625f',
+            'CidrBlock': '172.16.0.0/18',
+             'AvailabilityZone': 'ap-south-1a'
+           }
+         ]
+}
+]
+```
+
+## References
+
+1. describe_instances()
+
+2. describe_vpcs()
+
+3. describe_subnets()
+
