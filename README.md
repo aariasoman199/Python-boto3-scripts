@@ -17,7 +17,7 @@ python3 describe_ec2_vpc.py ec2
 
 1. Input: A command-line argument indicating whether to fetch ec2 or vpc info.
 
-2. Initialize AWS Client: Using hardcoded credentials and Boto3.
+2. Initialize AWS Client using Boto3.
 
 3. If ec2 selected:
 
