@@ -27,10 +27,10 @@ python3 describe_ec2_vpc.py ec2
 
 3. If ec2 selected:
 
-   Call instance_info()
-   Loop through instances to extract:
-   Name tag, instance ID, type, state, IPs, subnet, VPC, and AZ.
-   Format and print as a list of dictionaries.
+   - Call instance_info()
+   - Loop through instances to extract:
+   -  Name tag, instance ID, type, state, IPs, subnet, VPC, and AZ.
+   - Format and print as a list of dictionaries.
 
 4. If vpc selected:
 
