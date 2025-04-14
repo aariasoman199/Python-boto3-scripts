@@ -43,8 +43,7 @@ python3 describe_ec2_vpc.py ec2
 ### instance_info()
 - Connects to EC2
 - Retrieves all instances
-- Extracts and structures details including:
-- Name, ID, AMI, type, state, IPs, VPC, subnet, AZ
+- Extracts instance Name, ID, AMI, type, state, IPs, VPC, subnet, AZ
 - Returns list of EC2 instance dictionaries
 
 ### vpc_info()
