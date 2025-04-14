@@ -12,8 +12,8 @@ This Python script connects to AWS using Boto3 and retrieves detailed informatio
 
 The script takes a single command-line argument:
 
-ec2 – Retrieves details of EC2 instances
-vpc – Retrieves details of VPCs and their associated subnets
+1. ec2 – Retrieves details of EC2 instances
+2. vpc – Retrieves details of VPCs and their associated subnets
 
 Example:
 ```sh
