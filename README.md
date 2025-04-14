@@ -103,7 +103,7 @@ python3 describe_ec2_vpc.py ec2
 
 ## References
 
-1. describe_instances()
+1. [describe_instances()](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_instances.html)
 
 2. describe_vpcs()
 
